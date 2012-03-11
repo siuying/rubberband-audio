@@ -26,7 +26,7 @@ module RubberBand
     end
 
     def run
-      command = "#{binary} #{@raw_options} #{Shellwords.escape(@input_file.path)} '#{Shellwords.escape(@output_file)}'"
+      command = "#{binary} #{@raw_options} '#{Shellwords.escape(@input_file)}' '#{Shellwords.escape(@output_file)}'"
 
       Open3.popen3(command) do |stdin, stdout, stderr|
         yield(0.0) if block_given?
