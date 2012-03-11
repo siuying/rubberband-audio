@@ -16,12 +16,11 @@ Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "rubberband-audio"
   gem.homepage = "http://github.com/siuying/rubberband-audio"
-  gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.license = "GPL"
+  gem.summary = %Q{Wrapper for Rubber Band library}
+  gem.description = %Q{Ruby Wrapper for Rubber Band library for changing the speed and pitch of audio recordings.}
   gem.email = "francis@ignition.hk"
   gem.authors = ["Francis Chong"]
-  # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
 
