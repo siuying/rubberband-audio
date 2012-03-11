@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "lib/rubberband-audio.rb",
     "lib/rubberband/options.rb",
     "lib/rubberband/processor.rb",
+    "rubberband-audio.gemspec",
     "spec/options_spec.rb",
     "spec/processor_spec.rb",
     "spec/spec_helper.rb"
