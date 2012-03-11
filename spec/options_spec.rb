@@ -2,25 +2,29 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 require 'rubberband-audio'
 
-describe Rubberband::Options do
+describe RubberBand::Options do
   describe "basic" do
     it "should use quite" do
-      Rubberband::Options.new.to_s.should =~ /-q/
+      RubberBand::Options.new.to_s.should =~ /-q/
     end
   end
   
   describe "configurable parameters" do
     it "should support time" do
-      o = Rubberband::Options.new(:time => "360")
+      o = RubberBand::Options.new(:time => "360")
       o.to_s.should =~ /--time 360/
     end
     
     it "should support tempo" do
-      o = Rubberband::Options.new(:tempo => 360)
+      o = RubberBand::Options.new(:tempo => 360)
       o.to_s.should =~ /--tempo 360/
     end
 
-    it "should support duration"
+    it "should support duration" do
+      o = RubberBand::Options.new(:duration => 200)
+      o.to_s.should =~ /--duration 200/
+    end
+
     it "should support pitch"
     it "should support frequency"
     it "should support timemap"

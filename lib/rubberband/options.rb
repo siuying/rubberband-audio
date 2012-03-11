@@ -1,4 +1,4 @@
-module Rubberband
+module RubberBand
   class Options < Hash
     def initialize(options={})
       merge!(options)
@@ -26,6 +26,10 @@ module Rubberband
     
     def convert_tempo(value)
       "--tempo #{value}"
+    end
+    
+    def convert_duration(value)
+      "--duration #{value}"
     end
   end
 end

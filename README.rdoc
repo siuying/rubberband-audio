@@ -1,6 +1,10 @@
 = rubberband-audio
 
-Description goes here.
+Ruby interface for [Rubber Band Library](http://breakfastquay.com/rubberband/).
+
+== Usage
+
+
 
 == Reference
 
