@@ -25,9 +25,21 @@ describe RubberBand::Options do
       o.to_s.should =~ /--duration 200/
     end
 
-    it "should support pitch"
-    it "should support frequency"
-    it "should support timemap"
+    it "should support pitch" do
+      o = RubberBand::Options.new(:pitch => 4)
+      o.to_s.should =~ /--pitch 4/
+    end
+
+    it "should support frequency" do
+      o = RubberBand::Options.new(:frequency => 4)
+      o.to_s.should =~ /--frequency 4/
+    end
+    
+    it "should support timemap" do
+      o = RubberBand::Options.new(:timemap => "/tmp/file0123")
+      o.to_s.should =~ %r{--timemap "/tmp/file0123"}
+    end
+
     it "should support crispness"
     it "should support format"
     it "should support precise"

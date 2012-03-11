@@ -31,5 +31,17 @@ module RubberBand
     def convert_duration(value)
       "--duration #{value}"
     end
+    
+    def convert_pitch(value)
+      "--pitch #{value}"
+    end
+    
+    def convert_frequency(value)
+      "--frequency #{value}"
+    end
+    
+    def convert_timemap(value)
+      "--timemap \"#{value}\""
+    end
   end
 end
