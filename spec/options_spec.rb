@@ -10,8 +10,16 @@ describe Rubberband::Options do
   end
   
   describe "configurable parameters" do
-    it "should support time"
-    it "should support tempo"
+    it "should support time" do
+      o = Rubberband::Options.new(:time => "360")
+      o.to_s.should =~ /--time 360/
+    end
+    
+    it "should support tempo" do
+      o = Rubberband::Options.new(:tempo => 360)
+      o.to_s.should =~ /--tempo 360/
+    end
+
     it "should support duration"
     it "should support pitch"
     it "should support frequency"
