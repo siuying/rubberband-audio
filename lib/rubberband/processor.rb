@@ -17,7 +17,7 @@ module RubberBand
     end
     
     def binary
-      binary_path = system("which rubberband")
+      binary_path = `which rubberband`
       if $? == 0
         binary_path
       else
