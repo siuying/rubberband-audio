@@ -1,5 +1,10 @@
 module RubberBand
   class Options < Hash
+    BINARY_OPTIONS = %w{formant precise realtime no_threads threads 
+                        no_transients bl_transients no_lamination 
+                        window_long window_short detector_perc 
+                        detector_soft pitch_hq}
+
     def initialize(options={})
       merge!(options)
     end
@@ -48,20 +53,20 @@ module RubberBand
       "--crisp #{value}"
     end
     
-    def convert_formant(value)
-      if value
-        "--formant"
-      else
-        ""
-      end
+    def self.convert_binary_params(name)
+      class_eval "
+      private
+      def convert_#{name}(value)
+        if value
+          '--#{name}'
+        else
+          ''
+        end
+      end"
     end
-    
-    def convert_precise(value)
-      if value
-        "--precise"
-      else
-        ""
-      end
+
+    BINARY_OPTIONS.each do |name|
+        convert_binary_params name.to_sym
     end
   end
 end
