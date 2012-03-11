@@ -40,9 +40,29 @@ describe RubberBand::Options do
       o.to_s.should =~ %r{--timemap "/tmp/file0123"}
     end
 
-    it "should support crispness"
-    it "should support format"
-    it "should support precise"
+    context "should support crispness" do
+      it "should accept crisp params" do
+        o = RubberBand::Options.new(:crisp => 5)
+        o.to_s.should =~ %r{--crisp 5}
+      end
+    end
+
+    it "should support formant" do
+      o = RubberBand::Options.new(:formant => true)
+      o.to_s.should =~ %r{--formant}
+
+      o = RubberBand::Options.new(:formant => false)
+      o.to_s.should_not =~ %r{--formant}
+    end
+
+    it "should support precise" do
+      o = RubberBand::Options.new(:precise => true)
+      o.to_s.should =~ %r{--precise}
+
+      o = RubberBand::Options.new(:precise => false)
+      o.to_s.should_not =~ %r{--precise}
+    end
+
     it "should support realtime mode"
     it "should support debug"
   end

@@ -43,5 +43,25 @@ module RubberBand
     def convert_timemap(value)
       "--timemap \"#{value}\""
     end
+    
+    def convert_crisp(value)
+      "--crisp #{value}"
+    end
+    
+    def convert_formant(value)
+      if value
+        "--formant"
+      else
+        ""
+      end
+    end
+    
+    def convert_precise(value)
+      if value
+        "--precise"
+      else
+        ""
+      end
+    end
   end
 end
