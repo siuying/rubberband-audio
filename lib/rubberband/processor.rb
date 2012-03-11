@@ -6,6 +6,7 @@ module RubberBand
     def initialize(input_file, output_file, options = Options.new)
       @input_file = input_file
       @output_file = output_file
+      @errors = []
 
       if options.is_a?(String) || options.is_a?(Options)
         @raw_options = options
