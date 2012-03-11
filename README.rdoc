@@ -2,6 +2,10 @@
 
 Description goes here.
 
+== Reference
+
+Rubber Band [Usage](http://breakfastquay.com/rubberband/usage.txt)
+
 == Contributing to rubberband-audio
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
