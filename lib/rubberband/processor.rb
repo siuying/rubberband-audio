@@ -31,19 +31,12 @@ module RubberBand
       output  = ""
 
       Open3.popen3(command) do |stdin, stdout, stderr|
-        yield(0.0) if block_given?
-        
         stderr.each("r") do |line| 
           output << line
-          if line =~ /(\d+)%/ # ffmpeg 0.8 and above style
-            progress = $1.to_f / 100.0
-            yield(progress)
-          end
         end
       end
-      
+
       if convert_succeeded?
-        yield(1.0)
         true
       else
         errors = @errors.empty? ? "" : " Errors: #{@errors.join(", ")}. "
