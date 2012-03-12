@@ -22,7 +22,7 @@ module RubberBand
     def binary
       binary_path = `which rubberband`
       if $? == 0
-        binary_path
+        binary_path.strip
       else
         raise "rubberband binary not found!"
       end
