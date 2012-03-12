@@ -3,6 +3,8 @@ require 'shellwords'
 
 module RubberBand 
   class Processor
+    attr_reader :command
+
     def initialize(input_file, output_file, options = Options.new)
       @input_file = input_file
       @output_file = output_file
@@ -27,10 +29,10 @@ module RubberBand
     end
 
     def run
-      command = "#{binary} #{@raw_options} '#{Shellwords.escape(@input_file)}' '#{Shellwords.escape(@output_file)}'"
+      @command = "#{binary} #{@raw_options} '#{Shellwords.escape(@input_file)}' '#{Shellwords.escape(@output_file)}'"
       output  = ""
 
-      Open3.popen3(command) do |stdin, stdout, stderr|
+      Open3.popen3(@command) do |stdin, stdout, stderr|
         stderr.each("r") do |line| 
           output << line
         end
@@ -40,7 +42,7 @@ module RubberBand
         true
       else
         errors = @errors.empty? ? "" : " Errors: #{@errors.join(", ")}. "
-        raise "Failed encoding.#{errors}Full output: #{output}"
+        raise "Failed encoding: #{errors}. \nCommand: #{@command}. \nFull output: #{output}"
       end
     end
     
