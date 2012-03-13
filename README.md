@@ -4,6 +4,12 @@ Ruby interface for [Rubber Band Library](http://breakfastquay.com/rubberband/).
 
 == Usage
 
+To process a sound, use following code:
+
+    rubberband = RubberBand::Processor.new "input.wav", "output.wav", :pitch => 9
+    rubberband.run 
+
+the output.wav should then processed with pitch raised by 9 semitones
 
 
 == Reference
