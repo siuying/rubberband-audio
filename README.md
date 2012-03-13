@@ -1,8 +1,13 @@
-= rubberband-audio
+# rubberband-audio
 
 Ruby interface for [Rubber Band Library](http://breakfastquay.com/rubberband/).
 
-== Usage
+## Requirements
+
+- Ruby 1.9.x
+- [Rubber Band Library](http://breakfastquay.com/rubberband/) Linux source, windows executable and Mac universal binaries are provided.
+
+## Usage
 
 To process a sound, use following code:
 
@@ -12,11 +17,11 @@ To process a sound, use following code:
 the output.wav should then processed with pitch raised by 9 semitones
 
 
-== Reference
+## Reference
 
 Rubber Band [Usage](http://breakfastquay.com/rubberband/usage.txt)
 
-== Contributing to rubberband-audio
+## Contributing to rubberband-audio
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
